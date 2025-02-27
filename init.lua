@@ -11,8 +11,8 @@ require('lazy').setup({
   'tpope/vim-rhubarb', -- Fugitive-companion to interact with github
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
   'stevearc/oil.nvim', -- More modern netrw
-  'navarasu/onedark.nvim', -- Colorscheme
-  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  -- 'navarasu/onedark.nvim', -- Colorscheme
+  -- 'nvim-lualine/lualine.nvim', -- Fancier statusline
   -- Add indentation guides even on blank lines
   'lukas-reineke/indent-blankline.nvim',
   -- Add git related info in the signs columns and popups
@@ -66,17 +66,17 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.cmd.colorscheme 'onedark'
+-- vim.cmd.colorscheme 'onedark'
 
 -- Set statusbar
-require('lualine').setup {
-  options = {
-    icons_enabled = false,
-    theme = 'onedark',
-    component_separators = '|',
-    section_separators = '',
-  },
-}
+-- require('lualine').setup {
+--   options = {
+--     icons_enabled = false,
+--     theme = 'onedark',
+--     component_separators = '|',
+--     section_separators = '',
+--   },
+-- }
 
 -- Enable Comment.nvim
 require('Comment').setup()
@@ -253,7 +253,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'pyright', 'ts_ls', 'gopls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
