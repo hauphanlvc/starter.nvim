@@ -41,6 +41,8 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+-- set relativenumber
+vim.opt.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -67,7 +69,8 @@ vim.o.completeopt = 'menuone,noselect'
 -- Set colorscheme (order is important here)
 vim.o.termguicolors = true
 -- vim.cmd.colorscheme 'onedark'
-
+-- Set clipboard
+vim.opt.clipboard = "unnamedplus"
 -- Set statusbar
 -- require('lualine').setup {
 --   options = {
