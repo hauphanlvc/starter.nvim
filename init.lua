@@ -37,6 +37,8 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+-- set relativenumber
+vim.opt.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -62,6 +64,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Set colorscheme (order is important here)
 vim.o.termguicolors = true
+-- Set clipboard
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable Comment.nvim
 require('Comment').setup()
@@ -182,7 +186,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls', 'gopls' }
+local servers = { 'pyright', 'ts_ls', 'gopls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
